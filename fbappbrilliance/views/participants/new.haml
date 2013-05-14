@@ -1,0 +1,41 @@
+-# coding: utf-8
+- content_for(:body_classes, "registro")
+- content_for(:javascript) do
+  = javascript_include_tag '/javascripts/hmg-input-form-validations.js'
+  :javascript        
+    function check(event) {
+      $.ajax({
+        url: '/fbappminicountryman/communes',
+        type: 'get',
+        data: "type="+event,
+        success: function( resp ) {
+          $("#communes")
+            .empty()
+            .html(resp);
+        }
+      });
+    }
+    
+.content
+  %center
+    - form_tag url(:participants, :create), :class => :form, :id => :registro do
+      = hidden_field_tag :facebook_id, :value => params[:participant][:facebook_id]
+      .group
+        = text_field_tag :facebook_first_name, :value => params[:participant][:facebook_first_name], :placeholder => "Nombre", :onkeypress => "return validatxt(event)", :class => :campos
+      .group
+        = text_field_tag :facebook_email, :value => params[:participant][:facebook_email], :placeholder => 'Correo electrónico', :class => :campos
+      .group
+        = text_field_tag :phone, :placeholder => 'Teléfono', :onkeypress => "return validanum(event)", :class => :campos
+      .group
+        = text_field_tag :rut, :placeholder => 'Rut', :onkeyup => "this.value = formato_rut(this.value, true)", :maxlength => "10", :class => :campos
+      .group
+        = text_field_tag :ocupa, :onkeypress => "return validatxt(event)", :class => :campos
+      .group.select
+        = select_tag :region, :options => @regiones, :onChange => 'check(this.options[this.selectedIndex].value);', :placeholder => 'Región', :class => :campos, :include_blank => 'Elige tu región...'
+      .group.select
+        = select_tag :commune, :placeholder => 'Comuna', :class => :campos, :id => :communes
+      .group
+        = check_box_tag :conditions
+      = submit_tag "CONTINUAR",  :id => 'enviar'
+
+

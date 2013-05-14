@@ -1,0 +1,37 @@
+-# coding: utf-8
+!!! Strict
+%html{:lang => "en", :xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" =>"http://www.facebook.com/2008/fbml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %title= yield_content :title
+    = stylesheet_link_tag 'style.css'
+    = stylesheet_link_tag 'jquery-ui-1.8.18.custom'
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
+    = javascript_include_tag 'jquery.placeholder.js'
+    = javascript_include_tag 'jquery.validate.js'
+    = javascript_include_tag 'jquery-1.7.1.min.js'
+    = javascript_include_tag 'jquery-ui-1.8.18.custom.min.js'
+    = javascript_include_tag '/javascripts/ga.js'
+    - if content_for? :javascript
+      = yield_content :javascript
+  %body{ :screen_capture_injected => "true", :class => yield_content(:body_classes) }
+    #fb-root
+    - if content_for? :facebook_javascript
+      = yield_content :facebook_javascript
+    #header
+      :javascript
+        var _gaq = _gaq || []; 
+        _gaq.push(['_setAccount', 'UA-40350142-1']); 
+        _gaq.push(['_trackPageview']); 
+
+        (function() { 
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+        })();
+      %ul.menu
+        %li
+          = link_to "BASES DEL CONCURSO", "/fbappminicountryman/BASES_CONCURSO_MINI_lanzamiento.pdf", :class => "bases", :target => "_blank"
+    = yield
+    #footer
+

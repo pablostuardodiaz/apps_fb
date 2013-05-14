@@ -1,0 +1,48 @@
+-# coding: utf-8
+- content_for(:title, 'Mini | Country Man')
+- content_for(:body_classes, "home")
+- content_for(:facebook_javascript) do
+  :javascript
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId  : '#{APP_ID}',
+        status : true, // check login status
+        cookie : true, // enable cookies to allow the server to access the session
+        xfbml  : true  // parse XFBML
+      });
+      FB.Canvas.setAutoGrow(true);
+    };
+    (function(d) {
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+    $(document).ready(function() {
+      $('.enter').click(function(e){
+        e.preventDefault();
+        FB.login(function(response) {
+          if (response.authResponse) {
+            sessionFB = response.authResponse;
+            uid = sessionFB.userID;
+            FB.api('/me', function(response) {
+              name = response.name;
+              email = response.email;
+              location.href = 'participants/new?participant[facebook_id]=' + uid + '&participant[facebook_first_name]=' + name + '&participant[facebook_email]=' + email;
+            });
+          }
+        }, { scope:'#{SCOPE}' }); // http://developers.facebook.com/docs/reference/api/permissions/ (todos los permisos)
+      });
+    });
+    function show_ajax_loader() {
+      $(".participar").fadeOut();
+      $(".ajax_loader").show();
+    }
+
+.start
+  .content
+    = link_to "", url(:participants, :new), :class => "enter participarmini", :onClick => "show_ajax_loader()"
+    = image_tag "/images/ajax-loader-bar.gif", :style => "position:absolute;display:none;left:305px;top:650px;", :class => "ajax_loader"
+
+
+    

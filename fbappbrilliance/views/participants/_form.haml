@@ -1,0 +1,16 @@
+-# coding: utf-8
+= f.hidden_field :facebook_id
+.group
+  = f.label :nombre
+  = f.text_field :facebook_first_name, :placeholder => "Nombre", :onkeypress => "return validatxt(event)", :class => :campos
+.group
+  = f.label :rut
+  = f.text_field :rut, :placeholder => 'Rut', :onkeyup => "this.value = formato_rut(this.value, true)", :maxlength => "10", :class => :campos
+.group
+  = f.label :email
+  = f.text_field :facebook_email, :placeholder => 'Correo electrónico', :class => :campos
+.group
+  = f.label "Teléfono"
+  = f.text_field :phone, :placeholder => 'Teléfono', :onkeypress => "return validanum(event)", :class => :campos
+
+= f.submit "SIGUIENTE",  :id => 'enviar'

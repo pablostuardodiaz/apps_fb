@@ -1,0 +1,222 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+		background-color:#000 !important;
+		font-family: sans-serif;
+		font-size: 0.875em;
+		margin:0;
+		padding:0;
+		width:810px;
+		height:810px;
+		position:relative;
+}
+
+body.disena{
+	background:url(../images/bg_disena.jpg) no-repeat 0 0;
+}
+
+body.home{
+	background: url(../images/bg_home.jpg) no-repeat 0 0;
+}
+
+body.nofans{
+	background: url(../images/bg_noFan.jpg) no-repeat 0 0;
+}
+
+body.registro{
+	background: url(../images/bg_registro.jpg) no-repeat 0 0;
+}
+
+body.galeria{
+	background: url(../images/bg_galeria.jpg) no-repeat 0 0;
+}
+
+body.compartir{
+	background: url(../images/bg_exito.jpg) no-repeat 0 0;
+}
+
+body.premio{
+	background: url(../images/bg_premio.jpg) no-repeat 0 0;
+}
+
+
+#header{ 
+height:178px;
+width:810px;
+position:relative;
+}
+
+#header ul.menu{
+position: absolute;
+right: 0;
+height: 33px;
+width: 295px;
+margin: 0;
+padding: 0;
+}
+
+#header ul.menu li{
+	list-style:none;
+	float:left;
+}
+
+#header ul.menu li a{
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+color: #005295;
+font-size: 14px;
+text-decoration: none;
+margin-left: 20px;
+height: 30px;
+display: block;
+line-height: 35px;
+}
+
+/*----------------------------------------- BOTONES -------------------------------------*/
+
+a.participarmini{
+	background: url(../images/btm_participa.jpg) no-repeat 0 0;
+	width: 128px;
+	height: 21px;
+	display: block;
+	position: absolute;
+	top: 650px;
+	left: 175px;
+}
+
+
+a.bases{
+	background: url(../images/btm_bases.jpeg) no-repeat 0 0;
+	width: 145px;
+	height: 21px;
+	display: block;
+	position: absolute;
+	text-indent: -9999px;
+	top: 35px;
+	left: 100px;
+}
+
+#botones{
+	width: 563px;
+	height: 100px;
+	display: block;
+	margin: 330px 0 0 0;
+}
+
+#botones a.compartir{
+	background: url(../images/btm_compartir.jpg) no-repeat 0 0;
+	width: 181px;
+	height: 100px;
+	display: block;
+	float: left;
+	margin: 0 0 0 15px;
+	position: absolute;
+	top: 620px;
+	left: 240px;
+}
+
+
+#botones a.invitar{
+	background:url(../images/btm_invitar.jpg) no-repeat 0 0;
+	width: 181px;
+	height: 100px;
+	display: block;
+	float: left;
+	margin: 0 0 0 15px;
+	position: absolute;
+	top: 620px;
+	left: 400px;
+}
+
+
+/*--------------------------------------FORMULARIO--------------------------------*/
+
+#registro{
+	width:310px;
+	height:370px;
+	margin: 109px 0 0 65px;
+}
+
+#registro .group{
+	padding-top: 11px;
+	padding-bottom: 8px;
+	float:left;
+}
+#registro .campos{
+	width: 285px;
+	height: 27px;
+	margin: 0;
+	padding: 5px 0 0 10px;
+	border: none;
+	font-size: 16px;
+}
+
+#registro label{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #fff;
+	width: 299px;
+	height: 28px;
+	text-align: left;
+	padding: 5px 0 0 0;
+}
+
+#registro #enviar{
+	background: url(../images/btm_continuar.jpg) no-repeat 0 0;
+	width: 130px;
+	height: 25px;
+	display: block;
+	text-indent: -99999px;
+	padding: 0;
+	border: none;
+	position: absolute;
+	cursor: pointer;
+	top: 680px;
+	left: 320px;
+}
+#registro select{
+	background: transparent;
+
+	padding: 5px;
+	font-size: 16px;
+	border: 1px solid #FFF;
+	height: 34px;
+	 -webkit-appearance: none;
+	overflow: hidden;
+	float:left;
+}
+
+#registro .select{
+	width: 295px;
+	padding: 3px 0px 10px 0px;
+	height: 22px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	background: url(../images/flecha_down.jpg) no-repeat 99% #FFF;
+}
+
+input[type=checkbox]:before { content:""; display:inline-block; width:22px; height:22px; background:white;margin-top:-8px; }
+input[type=checkbox]:checked:before { background: url(../images/22x22check.jpeg); }
+
+
+/*----------------- boton--------------*/
+
+@charset "utf-8";
+
+
+/*----------fin-boton-----------*/
+.notice{
+	background: #ccc;
+	width: 75%;
+	height: 17px;
+	padding: 10px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 5px;
+	margin: 30px;
+}
+.countryman-like-button{
+	position: absolute;
+	top: 648px;
+	left: 418px;
+}

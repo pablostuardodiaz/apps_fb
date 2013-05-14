@@ -1,0 +1,38 @@
+-# coding: utf-8
+- content_for(:title, 'Mini | Countryman')
+- content_for(:body_classes, "nofans")
+- content_for(:facebook_javascript) do
+  :javascript
+    window.fbAsyncInit = function() {
+      FB.init({appId: '#{APP_ID}', status: true, cookie: true, xfbml: true});
+      FB.Canvas.setAutoGrow(true);
+      FB.Event.subscribe('edge.create',function(response){ top.location.href = 'http://www.facebook.com/hmgdev/app_310201642444288'; });
+    };
+    (function(d) {
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+    $(document).ready(function() {
+      $('.enter').click(function(e){
+        e.preventDefault();
+        FB.login(function(response) {
+          if (response.authResponse) {
+            sessionFB = response.authResponse;
+            uid = sessionFB.userID;
+            FB.api('/me', function(response) {
+              name = response.name;
+              email = response.email;
+              location.href = 'participants/new?participant[facebook_id]=' + uid + '&participant[facebook_first_name]=' + name + '&participant[facebook_email]=' + email;
+            });
+          }
+        }, { scope:'#{SCOPE}' }); // http://developers.facebook.com/docs/reference/api/permissions/ (todos los permisos)
+      });
+    });
+    function show_ajax_loader() {
+      $(".ajax_loader").show();
+    }
+.countryman-like-button
+  .fb-like{:height => "50", :href => "http://www.facebook.com/hmgdev", "data-layout" => "button_count", "send" => "false", "show-faces" => "false", "data-width" => "40"}
+

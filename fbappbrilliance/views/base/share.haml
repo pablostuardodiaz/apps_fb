@@ -1,0 +1,50 @@
+- content_for(:title, 'Comparte')
+- content_for(:body_classes, "compartir")
+- content_for(:javascript) do
+  :javascript
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId  : '#{APP_ID}',
+        status : true, // check login status
+        cookie : true, // enable cookies to allow the server to access the session
+        xfbml  : true  // parse XFBML
+      });
+    };
+
+    (function(d) {
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+    
+    $(document).ready(function() {
+      $(".sharefb").click(function(){
+        FB.ui({
+            method: 'feed',
+            name: 'MINI | Countryman John Cooper Works',
+            link: 'https://www.facebook.com/MINI.Chile/app_227789217365934',
+            picture: 'http://hmgappcenter.herokuapp.com/fbappminicountryman/images/75x75.jpeg',
+            caption: 'Ya estoy participando para conducir el potente y deportivo MINI Countryman John Cooper Works en pista. ',
+            description: 'MINI te invita a ser uno de los primeros en conducir el MINI Countryman John Cooper Works en pista. Participa por un cupo para ti y un acompañante.'
+          },
+          function(response) {
+          
+          });
+        return false;
+      });
+      $(".invitar").click(function(){
+        FB.ui({ method: 'apprequests',
+              message: 'Invita a tus amigos a dominar el MINI Countryman John Cooper Works en la pista.',
+              filters: ['app_non_users'],
+              title: 'Invitación',
+        max_recipients: '50'
+        });
+      });
+    });
+  
+%center
+  #botones
+    = link_to "", "#", :class => 'compartir sharefb'
+    = link_to "", "#", :class => 'invitar'
+

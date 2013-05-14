@@ -1,0 +1,158 @@
+ 	body {background: #fff; font-family: sans-serif; font-size: 0.875em; margin: 0; padding: 0; width: 810px; height: 810px; position: relative;}
+  	body.inicio {background: url(../img/back_megusta.jpg) no-repeat 0 0;}
+	body.nofan {background: url(../img/back_nofan.jpg) no-repeat 0 0;}
+	body.registro {background: url(../img/back_form.jpg) no-repeat 0 0;}
+	body.mensaje {background: url(../img/back_mensaje.jpg) no-repeat 0 0;}
+	body.exito {background: url(../img/back_exito.jpg) no-repeat 0 0;}
+	
+	#header ul.menu {
+		position: absolute;
+		right: 172px;
+		height: 33px;
+		width: 295px;
+		margin: 0;
+		padding: 0;
+	}
+
+	#header ul.menu li {
+		list-style: none;
+		float: left;
+        margin-right:25px;
+        list-style-position:outside !important;
+	}
+
+	#header ul.menu li a {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		color: #1e1e1e;
+		font-size: 14px;
+		text-decoration: none;
+		margin-left: 7px;
+		height: 30px;
+		display: block;
+		line-height: 35px;
+		text-transform:uppercase;
+		font-weight:bold;
+	}
+
+
+.button_position {	position: absolute; top: 500px;	left: 329px;}
+.button_position_2 {position: absolute; top: 681px;	left: 329px;}
+.button_position_3 {position: absolute; top: 552px;	left: 177px;}
+.button_position_4 {position: absolute; top: 552px;	left: 301px;}
+.button_position_5 {position: absolute; top: 552px;	left: 481px;}
+.button_position_6 {position: absolute; top: 520px;	left: 245px;}
+.button_position_7 {position: absolute; top: 520px;	left: 405px;}
+
+.button_go {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+	background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+	background-color:#fe1a00;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:18px;
+	font-weight:bold;
+	padding:8px 28px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #b23e35;
+}.button_go:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
+	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
+	background-color:#ce0100;
+}
+#registro {
+position: absolute;
+top: 273px;
+left: 92px;
+width: 622px;
+height: 133px;
+}
+
+.group input{ width:150px; height:21px;}
+
+#user_name {position: absolute; top: 34px; left: 16px; }
+#user_mail { position: absolute; top: 34px; left: 256px; }
+#user_phone { position: absolute; top: 34px; left: 451px;}
+#nombre_mama{position: absolute;top: 94px;left: 17px;}
+#mail_mama {position: absolute;top: 94px;left: 256px;}
+
+	div#centerDiv {
+width: 760px;
+text-align: center;
+position: absolute;
+top: 488px;
+left: 39px;
+    }
+    ul.centerUL {
+        margin: 2px auto;
+        line-height: 1.4;
+    }
+    .centerUL li {
+        display: inline;
+        text-align: center;
+		width: 116px;
+		display: block;
+		float:left;
+		margin-right: 17px;
+    }
+
+    .centerUL li a:hover, .centerUL li a.active{ opacity:0.5; }
+	
+#textarea { 
+position: absolute;
+top: 320px;
+left: 109px;
+width: 579px;
+height: 175px;
+border: 1px #b3b3b3 solid;
+background-color: #f7f7f6;
+resize: none;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* Preview */
+ 
+#preview {width:727px; height:431px; background: url(../img/back_preview.jpg) no-repeat 0 0; font-family: 'Roboto Condensed', sans-serif; color:#333333; overflow:hidden; position:relative}
+#preview h1{
+width: 316px;
+margin: 0px;
+margin-left: 17px;
+margin-top: 45px;
+font-weight: normal;
+}
+#preview p{
+width: 316px;
+margin: 0px;
+margin-left: 17px;
+font-size: 18px;
+}
+#preview h4{
+width: 316px;
+margin: 0px;
+margin-left: 17px;
+font-size: 17px;
+margin-top: 11px;
+}
+
+#postal_image {
+	position:absolute;
+	top:0px;
+	right:18px;
+}
+
+input.error {background: url(../img/alert.jpg) no-repeat 129px 5px; background-color:#FFF; border:1px solid #ff6666; height: 23px;}
+.group strong{ display:none !important;}
+.remaining{
+    position: absolute;
+    top: 510px;
+    left: 595px;
+}
